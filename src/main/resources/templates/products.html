@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div th:replace="~{navigation :: navi(Home)}"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <nav aria-label="...">
+                <ul class="pagination pagination-sm justify-content-end mt-3">
+                   <li class="page-item" th:each="p : ${pages}" th:classappend="${p + 1 == page} ? 'active'">
+                        <a class="page-link" th:text="${p + 1}" th:href="@{'products?page=' + ${p + 1}}"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+        <div >
+            <div  th:if="${products.size() != 0 || products.size() > 0}">
+                <div >
+                    <h3>Популярные товары</h3>
+                    <div class="row mt-3">
+                        <div class="col-sm-2 col-md-4" th:each="product : ${topProducts}">
+                            <div >
+                                <div class="card-body">
+                                    <h5  th:text="${product.title}"></h5>
+                                    <p  th:text="'Цена : ' + ${product.price} + ' рублей'"></p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <h2 class="mt-2" th:text="${products.size() == 0 || products.size() < 0} ? 'Товаров нет' : 'Товары'"></h2>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Название товара</th>
+                    <th>Цена</th>
+                    <th>Действия</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"/>
+                    <td th:text="${product.title}"/>
+                    <td th:text="${product.price}"/>
+                    <td>
+                        <a  th:href="@{'/products/show/' + ${product.id}}" th:text="Просмотреть"/>
+                        <a sec:authorize="hasRole('ADMIN')" th:href="@{'/products/edit/' + ${product.id}}" th:text="Изменить"></a>
+                        <a sec:authorize="hasRole('ADMIN')" th:href="@{'/products/delete/' + ${product.id}}" th:text="Удалить"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-3 float-left" th:if="${products.size() != 0 || products.size() > 0}">
+        <div style="margin-left: 160px" class="input-group">
+            <div class="card-body">
+                <form th:action="@{/products}" method="get" >
+                    <h2 >Фильтр</h2>
+                    <div class="input-group mb-2">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input th:value="${title != null} ? ${title}" name="title" placeholder="Название" >
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="number" th:value="${minPrice != null} ? ${minPrice}" name="minPrice" placeholder="Мин. цена" >
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="number" th:value="${maxPrice != null} ? ${maxPrice}" name="maxPrice" placeholder="Макс. цена" >
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" class="btn btn-block btn-primary">Применить</button>
+                        <button type="reset" class="btn btn-block btn-primary" onclick="resetFilter()">Сбросить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    function resetFilter() {
+        window.location = '/products';
+    }
+</script>
+
+</body>
+</html>

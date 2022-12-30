@@ -1,0 +1,267 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_PRIV_INSTRUCTION (0xc0000096) at pc=0x0000023f6ddc571d, pid=11064, tid=0x0000000000005a88
+#
+# JRE version: OpenJDK Runtime Environment (8.0_333-b02) (build 1.8.0_333-b02)
+# Java VM: OpenJDK 64-Bit Server VM (25.333-b02 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# j  javax.validation.Validation.byDefaultProvider()Ljavax/validation/bootstrap/GenericBootstrap;+304
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bell-sw.com/support
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000023f093c7800):  JavaThread "background-preinit" [_thread_in_Java, id=23176, stack(0x0000009268800000,0x0000009268900000)]
+
+siginfo: ExceptionCode=0xc0000096
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00000000000000c6, RCX=0x0000000000000000, RDX=0x0000000000000000
+RSP=0x00000092688ff2f0, RBP=0x00000092688ff3a0, RSI=0x0000000020200020, RDI=0x0000000000000010
+R8 =0x0000000000000061, R9 =0x0000000000000061, R10=0x0000000000000000, R11=0x0000000000000061
+R12=0x0000000000000000, R13=0x0000023f09b3d411, R14=0x00000092688ff3a8, R15=0x0000023f093c7800
+RIP=0x0000023f6ddc571d, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x00000092688ff2f0)
+0x00000092688ff2f0:   0000023f093c7800 00000000000000c6
+0x00000092688ff300:   00000092688ff3a0 0000000020200020
+0x00000092688ff310:   0000000000000004 000000005a8833b0
+0x00000092688ff320:   0000000000000006 0000000000000006
+0x00000092688ff330:   0000000000000010 0000000020200020
+0x00000092688ff340:   00000092688ff3a0 00000092688ff370
+0x00000092688ff350:   00000000000000c6 0000023f08f663f8
+0x00000092688ff360:   0000000000000008 0000023f09b3d540
+0x00000092688ff370:   00000092688ff3a8 0000023f09b3d528
+0x00000092688ff380:   0000000000000000 0000023f09b3d410
+0x00000092688ff390:   0000000000000000 00000092688ff3b0
+0x00000092688ff3a0:   00000092688ff3f0 0000023f6ddc7e40
+0x00000092688ff3b0:   00000092688ff3b0 0000023f09b3ce98
+0x00000092688ff3c0:   00000092688ff408 0000023f09b3cff8
+0x00000092688ff3d0:   0000000000000000 0000023f09b3ced0
+0x00000092688ff3e0:   00000092688ff3b0 00000092688ff408 
+
+Instructions: (pc=0x0000023f6ddc571d)
+0x0000023f6ddc56fd:   00 00 48 ba 9f 56 dc 6d 3f 02 00 00 4c 8b c4 48
+0x0000023f6ddc570d:   83 e4 f0 49 ba 90 5d 37 5a 00 00 00 00 41 ff d2
+0x0000023f6ddc571d:   f4 66 90 80 20 00 00 00 00 00 00 08 25 68 5a 00
+0x0000023f6ddc572d:   00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00000000000000c6 is an unknown value
+RCX=0x0000000000000000 is an unknown value
+RDX=0x0000000000000000 is an unknown value
+RSP=0x00000092688ff2f0 is pointing into the stack for thread: 0x0000023f093c7800
+RBP=0x00000092688ff3a0 is pointing into the stack for thread: 0x0000023f093c7800
+RSI=0x0000000020200020 is an unknown value
+RDI=0x0000000000000010 is an unknown value
+R8 =0x0000000000000061 is an unknown value
+R9 =0x0000000000000061 is an unknown value
+R10=0x0000000000000000 is an unknown value
+R11=0x0000000000000061 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x0000023f09b3d411 is pointing into metadata
+R14=0x00000092688ff3a8 is pointing into the stack for thread: 0x0000023f093c7800
+R15=0x0000023f093c7800 is a thread
+
+
+Stack: [0x0000009268800000,0x0000009268900000],  sp=0x00000092688ff2f0,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x0000023f6ddc571d
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x0000023f093c7800 JavaThread "background-preinit" [_thread_in_Java, id=23176, stack(0x0000009268800000,0x0000009268900000)]
+  0x0000023f08f79000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=12036, stack(0x0000009268600000,0x0000009268700000)]
+  0x0000023f089a8800 JavaThread "Service Thread" daemon [_thread_blocked, id=21924, stack(0x0000009268500000,0x0000009268600000)]
+  0x0000023f0896b000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=12472, stack(0x0000009268400000,0x0000009268500000)]
+  0x0000023f0894a000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=11600, stack(0x0000009268300000,0x0000009268400000)]
+  0x0000023f0893f800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=2512, stack(0x0000009268200000,0x0000009268300000)]
+  0x0000023f0893c000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=24256, stack(0x0000009268100000,0x0000009268200000)]
+  0x0000023f0893a800 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=16928, stack(0x0000009268000000,0x0000009268100000)]
+  0x0000023f7f023000 JavaThread "Attach Listener" daemon [_thread_blocked, id=8080, stack(0x0000009267f00000,0x0000009268000000)]
+  0x0000023f7f022000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5680, stack(0x0000009267e00000,0x0000009267f00000)]
+  0x0000023f7efef000 JavaThread "Finalizer" daemon [_thread_blocked, id=13892, stack(0x0000009267d00000,0x0000009267e00000)]
+  0x0000023f7efe7000 JavaThread "Reference Handler" daemon [_thread_blocked, id=21876, stack(0x0000009267c00000,0x0000009267d00000)]
+  0x0000023f6c338800 JavaThread "main" [_thread_in_vm, id=6552, stack(0x0000009267200000,0x0000009267300000)]
+
+Other Threads:
+  0x0000023f7efbd000 VMThread [stack: 0x0000009267b00000,0x0000009267c00000] [id=9868]
+  0x0000023f08f85000 WatcherThread [stack: 0x0000009268700000,0x0000009268800000] [id=23172]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006d1000000, size: 3824 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 71680K, used 60282K [0x0000000770580000, 0x0000000775580000, 0x00000007c0000000)
+  eden space 61440K, 98% used [0x0000000770580000,0x000000077405e830,0x0000000774180000)
+  from space 10240K, 0% used [0x0000000774b80000,0x0000000774b80000,0x0000000775580000)
+  to   space 10240K, 0% used [0x0000000774180000,0x0000000774180000,0x0000000774b80000)
+ ParOldGen       total 163840K, used 0K [0x00000006d1000000, 0x00000006db000000, 0x0000000770580000)
+  object space 163840K, 0% used [0x00000006d1000000,0x00000006d1000000,0x00000006db000000)
+ Metaspace       used 14290K, capacity 14920K, committed 15104K, reserved 1062912K
+  class space    used 1862K, capacity 1996K, committed 2048K, reserved 1048576K
+
+Card table byte_map: [0x0000023f7d180000,0x0000023f7d900000] byte_map_base: 0x0000023f79af8000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005a8a1830
+ Begin Bits: [0x0000023f00000000, 0x0000023f03bc0000)
+ End Bits:   [0x0000023f03bc0000, 0x0000023f07780000)
+
+Polling page: 0x0000023f6c560000
+
+CodeCache: size=245760Kb used=3134Kb max_used=3134Kb free=242625Kb
+ bounds [0x0000023f6ddc0000, 0x0000023f6e0d0000, 0x0000023f7cdc0000]
+ total_blobs=1660 nmethods=1291 adapters=282
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 2.433 Thread 0x0000023f0896b000 nmethod 1270 0x0000023f6e0c0f50 code [0x0000023f6e0c1680, 0x0000023f6e0c4ca0]
+Event: 2.433 Thread 0x0000023f0896b000 1276   !   1       org.springframework.boot.context.properties.source.SpringConfigurationPropertySource::getConfigurationProperty (119 bytes)
+Event: 2.435 Thread 0x0000023f0896b000 nmethod 1276 0x0000023f6e0c9750 code [0x0000023f6e0c9980, 0x0000023f6e0ca100]
+Event: 2.435 Thread 0x0000023f0896b000 1277       1       org.springframework.boot.context.properties.source.ConfigurationPropertyName$Elements::canShortcutWithSource (74 bytes)
+Event: 2.435 Thread 0x0000023f0896b000 nmethod 1277 0x0000023f6e0cab50 code [0x0000023f6e0cacc0, 0x0000023f6e0caef8]
+Event: 2.435 Thread 0x0000023f0896b000 1274       1       org.springframework.core.env.SystemEnvironmentPropertySource::checkPropertyName (97 bytes)
+Event: 2.436 Thread 0x0000023f0896b000 nmethod 1274 0x0000023f6e0cb0d0 code [0x0000023f6e0cb2a0, 0x0000023f6e0cb5e0]
+Event: 2.436 Thread 0x0000023f0896b000 1278       1       org.springframework.boot.context.properties.source.ConfigurationPropertyName$Elements::newResolved (32 bytes)
+Event: 2.436 Thread 0x0000023f0896b000 nmethod 1278 0x0000023f6e0cb810 code [0x0000023f6e0cb980, 0x0000023f6e0cbbf0]
+Event: 2.436 Thread 0x0000023f0896b000 1275       1       java.util.Collections$UnmodifiableMap::get (11 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 1.777 Thread 0x0000023f6c338800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$andThen$1(Ljava/util/function/Function;Ljava/lang/Object;)Ljava/lang/Object;> (0x0000000771a4d768) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\build\hotspot\src\shar
+Event: 1.891 Thread 0x0000023f6c338800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$fromSpringFactories$0(Ljava/lang/ClassLoader;)Ljava/util/List;> (0x000000077212f8c0) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\build\hotspot\src\share\vm\interpret
+Event: 1.933 Thread 0x0000023f6c338800 Exception <a 'java/io/FileNotFoundException'> (0x00000007722fb680) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\build\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 2.087 Thread 0x0000023f6c338800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$comparingInt$7b0bb60$1(Ljava/util/function/ToIntFunction;Ljava/lang/Object;Ljava/lang/Object;)I> (0x0000000772b06be0) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\bui
+Event: 2.091 Thread 0x0000023f6c338800 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x0000000772b23a00) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\build\hotspot\src\share\vm\interpreter\linkResolver.cpp
+Event: 2.130 Thread 0x0000023f6c338800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$or$2(Ljava/util/function/BiPredicate;Ljava/lang/Object;Ljava/lang/Object;)Z> (0x0000000772cb01a8) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\build\hotspot\src\share
+Event: 2.132 Thread 0x0000023f6c338800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$chars$0()Ljava/util/Spliterator$OfInt;> (0x0000000772cc0a48) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\build\hotspot\src\share\vm\interpreter\linkResolver.cpp, lin
+Event: 2.182 Thread 0x0000023f6c338800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$comparing$77a9974f$1(Ljava/util/function/Function;Ljava/lang/Object;Ljava/lang/Object;)I> (0x0000000772f5f0e8) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\build\hots
+Event: 2.221 Thread 0x0000023f6c338800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$from$1(Ljava/util/function/Supplier;Lorg/springframework/boot/BootstrapContext;)Ljava/lang/Object;> (0x000000077314f3d0) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\
+Event: 2.285 Thread 0x0000023f6c338800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$and$0(Ljava/util/function/Predicate;Ljava/lang/Object;)Z> (0x00000007733c9ae8) thrown at [C:\ws\workspace\jdk-8u333\label\windows-x86_64\type\b8\build\hotspot\src\share\vm\interpreter\lin
+
+Events (10 events):
+Event: 2.432 loading class org/springframework/boot/autoconfigure/BackgroundPreinitializer$ConversionServiceInitializer
+Event: 2.432 loading class org/springframework/boot/autoconfigure/BackgroundPreinitializer$ConversionServiceInitializer done
+Event: 2.432 loading class org/springframework/boot/context/properties/bind/Bindable
+Event: 2.432 loading class org/springframework/boot/context/properties/bind/Bindable done
+Event: 2.433 loading class org/springframework/boot/EnvironmentConverter
+Event: 2.433 loading class org/springframework/boot/EnvironmentConverter done
+Event: 2.434 loading class org/springframework/boot/autoconfigure/BackgroundPreinitializer$ValidationInitializer
+Event: 2.434 loading class org/springframework/boot/autoconfigure/BackgroundPreinitializer$ValidationInitializer done
+Event: 2.435 loading class javax/validation/Validation
+Event: 2.435 loading class javax/validation/Validation done
+
+
+Dynamic libraries:
+0x00007ff788af0000 - 0x00007ff788b35000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\bin\java.exe
+0x00007fffaf340000 - 0x00007fffaf549000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fffaddc0000 - 0x00007fffade7e000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fffaccf0000 - 0x00007fffad06b000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fffad2b0000 - 0x00007fffad35e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fffad410000 - 0x00007fffad4b3000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fffad360000 - 0x00007fffad3fe000 	C:\WINDOWS\System32\sechost.dll
+0x00007fffadb60000 - 0x00007fffadc80000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fffae7f0000 - 0x00007fffae99d000 	C:\WINDOWS\System32\USER32.dll
+0x00007fffac860000 - 0x00007fffac886000 	C:\WINDOWS\System32\win32u.dll
+0x00007fffadd90000 - 0x00007fffaddb9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fffad070000 - 0x00007fffad188000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fffac890000 - 0x00007fffac92d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fffacb60000 - 0x00007fffacc71000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff954a0000 - 0x00007fff95745000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467\COMCTL32.dll
+0x00007fffad4c0000 - 0x00007fffad4f2000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff9c300000 - 0x00007fff9c315000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\vcruntime140.dll
+0x00007fff8a040000 - 0x00007fff8a0db000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\msvcp140.dll
+0x000000005a0c0000 - 0x000000005a91a000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\server\jvm.dll
+0x00007fffad400000 - 0x00007fffad408000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fffa6140000 - 0x00007fffa6173000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff95280000 - 0x00007fff95289000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fffa38a0000 - 0x00007fffa38aa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fffae720000 - 0x00007fffae78f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fffab860000 - 0x00007fffab878000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fff9d2f0000 - 0x00007fff9d300000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\verify.dll
+0x00007fff9a7f0000 - 0x00007fff9a81b000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\java.dll
+0x00007fff9d640000 - 0x00007fff9d672000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\instrument.dll
+0x00007fff9bdb0000 - 0x00007fff9bdc8000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\zip.dll
+0x00007fffae9a0000 - 0x00007fffaf157000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007fffaa8d0000 - 0x00007fffab135000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007fffae0b0000 - 0x00007fffae428000 	C:\WINDOWS\System32\combase.dll
+0x00007fffaa760000 - 0x00007fffaa8c6000 	C:\WINDOWS\SYSTEM32\wintypes.dll
+0x00007fffaf180000 - 0x00007fffaf26a000 	C:\WINDOWS\System32\SHCORE.dll
+0x00007fffae6c0000 - 0x00007fffae71d000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007fffac710000 - 0x00007fffac731000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007fff9d620000 - 0x00007fff9d63a000 	D:\IntelliJ IDEA 2022.1.3\bin\breakgen64.dll
+0x00007fff9b610000 - 0x00007fff9b62c000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\net.dll
+0x00007fffabd00000 - 0x00007fffabd67000 	C:\WINDOWS\system32\mswsock.dll
+0x00007fffab3c0000 - 0x00007fffab4a8000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007fffab390000 - 0x00007fffab3bd000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007fffad500000 - 0x00007fffad509000 	C:\WINDOWS\System32\NSI.dll
+0x00007fffa0310000 - 0x00007fffa031a000 	C:\Windows\System32\rasadhlp.dll
+0x00007fffa3920000 - 0x00007fffa39a1000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x00007fff9d590000 - 0x00007fff9d59d000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\management.dll
+0x00007fff9ab10000 - 0x00007fff9ab23000 	C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\bin\nio.dll
+0x00007fffabf50000 - 0x00007fffabf68000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007fffab7c0000 - 0x00007fffab7f5000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007fffabdf0000 - 0x00007fffabe19000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007fffac140000 - 0x00007fffac167000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x00007fffac7e0000 - 0x00007fffac85f000 	C:\WINDOWS\System32\bcryptprimitives.dll
+0x00007fffabf40000 - 0x00007fffabf4c000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007fffa56c0000 - 0x00007fffa56d9000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x00007fffa5da0000 - 0x00007fffa5dbe000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+0x00007fff8ef10000 - 0x00007fff8ef27000 	C:\WINDOWS\system32\napinsp.dll
+0x00007fff8be50000 - 0x00007fff8be6b000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x00007fff8f0c0000 - 0x00007fff8f0d2000 	C:\WINDOWS\System32\winrnr.dll
+0x00007fffa4ae0000 - 0x00007fffa4af5000 	C:\WINDOWS\system32\wshbth.dll
+0x00007fff4efb0000 - 0x00007fff4efcf000 	C:\WINDOWS\system32\nlansp_c.dll
+0x00007fffa9bd0000 - 0x00007fffa9df1000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -javaagent:D:\IntelliJ IDEA 2022.1.3\lib\idea_rt.jar=64418:D:\IntelliJ IDEA 2022.1.3\bin -Dfile.encoding=UTF-8 
+java_command: com.vyatsu.task14.DemoBootApplication
+java_class_path (initial): C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\charsets.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\access-bridge-64.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\cldrdata.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\dnsns.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\jaccess.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\jfxrt.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\localedata.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\nashorn.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\sunec.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\sunjce_provider.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\sunmscapi.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\sunpkcs11.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\ext\zipfs.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\jce.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\jfr.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\jfxswt.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\jsse.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\management-agent.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\resources.jar;C:\Users\οκ\.jdks\liberica-1.8.0_333\jre\lib\rt.jar;D:\programs\JAVA_practice\task14\target\classes;C:\Users\οκ\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\2.6.1\spring-boot-starter-thymeleaf-2.6.1.jar;C:\Users\οκ\.m2\repository\org\springframework\boot\spring-boot-starter\2.6.1\spring-boot-starter-2.6.1.jar;C:\Users\οκ\.m2\repository\org\springframework\boot\spring-boot\2.6.1\spring-boot-2.6.1.jar;C:\Users\οκ\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.6.1\spring-boot-autoconfigure-2.6.1.jar;C:\Users\οκ\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.6.1\spring-boot-starter-logging-2.6.1.jar;C:\Users\οκ\.m2\repository\ch\qos\logback\logback-classic\1.2.7\logback-classic-1.2.7.jar;C:\Users\οκ\.m2\repository\ch\qos\logback\logback-core\1.2.7\
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\οκ\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\οκ\AppData\Local\Programs\Python\Python310\;C:\Users\οκ\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\οκ\AppData\Local\GitHubDesktop\bin;C:\Users\οκ\.dotnet\tools;D:\IntelliJ IDEA Community Edition 2022.1.2\bin;;D:\IntelliJ IDEA 2022.1.3\bin;
+USERNAME=οκ
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 22000 (10.0.22000.1335)
+
+CPU:total 8 (initial active 8) (8 cores per cpu, 1 threads per core) family 23 model 24 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 15662732k(5439292k free), swap 18022028k(5272056k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.333-b02) for windows-amd64 JRE (1.8.0_333-b02), built on May 26 2022 18:48:07 by "hudson" with MS VC++ 15.9 (VS2017)
+
+time: Fri Dec 16 11:29:40 2022
+timezone: RTZ 2 (ηθμΰ)
+elapsed time: 2.505563 seconds (0d 0h 0m 2s)
+

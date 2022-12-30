@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="icon" type="image/png" th:href="@{/favicon.ico}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:replace="~{navigation :: navi(Home)}"></div>
+
+<div class="container">
+    <div class="row pb-3">
+        <div class="col">
+            <h2 th:text="${product.id == null ? 'Добавление товара' : 'Редактирование товара'}"></h2>
+        </div>
+    </div>
+    <div class="row pb-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <form th:action="@{/products/add}"
+                          th:object="${product}" method="post" class="form-horizontal">
+                        <h5 class="pb-1">Название</h5>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input th:field="*{title}" placeholder="Название" class="form-control" required/>
+                        </div>
+                        <h5 class="pb-1">Цена</h5>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="number" th:field="*{price}" placeholder="Цена" class="form-control" pattern="\d*" required/>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="hidden" th:field="*{id}" placeholder="id" class="form-control" pattern="\d*" required/>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="hidden" th:field="*{view}" placeholder="view" class="form-control" pattern="\d*" required/>
+                        </div>
+                        <div class="input-group">
+                            <button type="submit" class="btn btn-primary" th:text="${product.id == null ? 'Добавить' : 'Сохранить'}"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
